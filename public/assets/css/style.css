@@ -1,0 +1,17 @@
+.container-home{
+    background-color: #dfdfdf;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    h2{
+        text-align: center;
+    }
+}
+.card{
+    transition: transform 0.7s ease, box-shadow 0.7s ease;
+}
+
+.card:hover{
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    transform: scale(1.03);
+}

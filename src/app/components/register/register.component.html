@@ -1,0 +1,149 @@
+<section class="container">
+  <!-- Contenedor principal del formulario de registro -->
+  <div class="container-register mt-5">
+    <div class="row w-100">
+      <!-- Columna izquierda: marco del teléfono -->
+      <div class="col-md-3 d-none d-md-flex justify-content-center align-items-center">
+      </div>
+      <!-- Columna derecha: formulario de registro -->
+      <div class="col-md-6 px-5 d-flex flex-column align-items-center">
+
+        <!-- Formulario de registro -->
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="onSubmit()"
+          class="col-4 text-center w-100 needs-validation"
+          novalidate>
+          <!-- Campo de email -->
+          <div class="form-group form-floating mb-3">
+            <input
+              type="email"
+              formControlName="email"
+              class="form-control"
+              id="email"
+              placeholder="Introduce tu email"
+              required
+              [ngClass]="{
+                'is-invalid': submitted && registerForm.controls['email'].errors,
+                'is-valid': submitted && registerForm.controls['email'].valid
+              }">
+            <label for="email">Email</label>
+            <!-- Mensaje de error dinámico -->
+            <div *ngIf="submitted && registerForm.controls['email'].errors" class="invalid-feedback">
+              Por favor, introduce un email válido.
+            </div>
+          </div>
+          <!-- Campo de nombre completo -->
+          <div class="form-group form-floating mb-3">
+            <input
+              type="text"
+              formControlName="name"
+              class="form-control"
+              id="name"
+              placeholder="Introduce tu nombre completo"
+              required
+              [ngClass]="{
+                'is-invalid': submitted && registerForm.controls['name'].errors,
+                'is-valid': submitted && registerForm.controls['name'].valid
+              }">
+            <label for="name">Nombre completo</label>
+            <!-- Mensaje de error dinámico -->
+            <div *ngIf="submitted && registerForm.controls['name'].errors" class="invalid-feedback">
+              Por favor, introduce tu nombre completo.
+            </div>
+          </div>
+          <!-- Campo de contraseña -->
+          <div class="form-group mb-3 position-relative">
+            <div class="input-group">
+              <div class="form-floating">
+                <input
+                  type="password"
+                  formControlName="password"
+                  class="form-control"
+                  id="pwd"
+                  placeholder="Introduce tu contraseña"
+                  required
+                  [ngClass]="{
+                    'is-invalid': submitted && registerForm.controls['password'].errors,
+                    'is-valid': submitted && registerForm.controls['password'].valid
+                  }">
+                <!-- Mensaje de error dinámico -->
+                <div *ngIf="submitted && registerForm.controls['password'].errors" class="invalid-feedback">
+                  La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.
+                </div>
+                <label for="pwd">Contraseña</label>
+              </div>
+            </div>
+          </div>
+          <!-- Campo de repetir contraseña -->
+          <div class="form-group mb-3 position-relative">
+            <div class="input-group">
+              <div class="form-floating">
+                <input
+                  type="password"
+                  formControlName="repeatPassword"
+                  class="form-control"
+                  id="repeat-pwd"
+                  placeholder="Repite tu contraseña"
+                  required
+                  [ngClass]="{
+                    'is-invalid': submitted && registerForm.controls['repeatPassword'].errors,
+                    'is-valid': submitted && registerForm.controls['repeatPassword'].valid
+                  }">
+                <!-- Mensaje de error dinámico -->
+                <div *ngIf="submitted && registerForm.controls['repeatPassword'].errors" class="invalid-feedback">
+                  Las contraseñas no coinciden.
+                </div>
+                <label for="repeat-pwd">Repetir contraseña</label>
+              </div>
+            </div>
+          </div>
+          <!-- Campo de nombre de usuario -->
+          <div class="form-group form-floating mb-3">
+            <input
+              type="text"
+              formControlName="username"
+              class="form-control"
+              id="username"
+              placeholder="Introduce tu nombre de usuario"
+              required
+              [ngClass]="{
+                'is-invalid': submitted && registerForm.controls['username'].errors,
+                'is-valid': submitted && registerForm.controls['username'].valid
+              }">
+            <label for="username">Nombre de usuario</label>
+            <!-- Mensaje de error dinámico -->
+            <div *ngIf="submitted && registerForm.controls['username'].errors" class="invalid-feedback">
+              Por favor, introduce un nombre de usuario.
+            </div>
+          </div>
+          <!-- Campo de fecha de nacimiento -->
+          <div class="form-group form-floating mb-3">
+            <input
+              type="date"
+              formControlName="birthdate"
+              class="form-control"
+              id="date"
+              placeholder="Introduce tu fecha de nacimiento"
+              required
+              [ngClass]="{
+                'is-invalid': submitted && registerForm.controls['birthdate'].errors,
+                'is-valid': submitted && registerForm.controls['birthdate'].valid
+              }">
+            <label for="date">Fecha de nacimiento</label>
+            <!-- Mensaje de error dinámico -->
+            <div *ngIf="submitted && registerForm.controls['birthdate'].errors" class="invalid-feedback">
+              Debes tener al menos 16 años para registrarte.
+            </div>
+          </div>
+          <!-- Botón de registro -->
+          <button type="submit" class="btn btn-submit btn-primary">Registrarse</button>
+        </form>
+
+
+        <!-- Enlace para iniciar sesión -->
+        <p class="mt-4">¿Tienes una cuenta? <a routerLink="/main" class="link-dark">Inicia sesión</a></p>
+      </div>
+    </div>
+  </div>
+</section>

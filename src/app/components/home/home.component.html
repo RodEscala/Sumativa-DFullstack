@@ -1,0 +1,53 @@
+
+<nav class="navbar navbar-expand-sm bg-dark " id="pageContent">
+  <div class="container-fluid">
+    <a class="navbar-brand text-success" id="userLogged"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-info" aria-current="page" routerLink="/home">Inicio</a>
+        </li>
+
+      </ul>
+
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav ms-auto">
+
+        <a class="nav-link text-white  " routerLink="/carrito">
+          <i class="fa fa-shopping-cart"></i>(<span class="fw-bold">cant. productos: {{cantidadProductos}}</span>)
+
+        </a>
+        <li class="nav-item ms-auto">
+          <a class="nav-link text-white d-flex  btn" onclick="logout()">Cerrar Sesion</a>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Contenido Principal: Lista de productos -->
+<div class="container-home mt-4    mx-4" id="pageContent"> <!-- Contenedor principal del contenido de la página -->
+  <h2 class="text-center">Productos Disponibles</h2> <!-- Título de la sección -->
+
+  <!-- Sección donde se generarán las tarjetas de produtos -->
+  <div id="productsList" class="row mt-5 mx-5 img-wh">
+    <div *ngFor="let item of productos" class="col-md-4 mb-4">
+        <div  class="card h-100">
+            <img [src]="item.image" class="card-img-top d-fluid" alt=${{item.title}}>
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{item.title}}</h5>
+                <p class="card-text">{{item.description}}</p>
+                <p class="card-text"><strong>Precio: </strong> ${{item.price}}</p>
+                <a class="btn btn-primary mt-auto justify-content-end mx-5 " (click)="AddProducto(item)">Agregar</a>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
