@@ -6,8 +6,7 @@
 /out-tsc
 /bazel-out
 
-*.log
-*.git
+
 
 # Node
 /node_modules
