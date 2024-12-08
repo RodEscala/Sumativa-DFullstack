@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm set registry https://registry.yarnpkg.com
 
 # Instalar las dependencias del proyecto
-RUN npm install
+RUN nnpm install -g npm@8
 
 # Copiar el resto del código del proyecto al contenedor
 COPY . .
