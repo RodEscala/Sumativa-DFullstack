@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY package.json package.json
 
+RUN npm cache clean --force
+
 RUN npm install
 
 FROM node:20.14.0 AS builder
