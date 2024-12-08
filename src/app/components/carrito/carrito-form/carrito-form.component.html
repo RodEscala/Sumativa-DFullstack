@@ -1,0 +1,33 @@
+<app-header></app-header>
+
+
+<div class="col-md col-lg container  mt-5">
+  <table class="table">
+    <thead>
+      <tr >
+        <th  scope="col">codigo Prod</th>
+        <th  scope="col">Nombre Prod</th>
+        <th  scope="col">Cantidad</th>
+        <th  scope="col">Precio</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of carritoProductList">
+        <td>{{producto.id}}</td>
+        <td>{{producto.title}}</td>
+        <td>{{producto.quantity}}</td>
+        <td>{{producto.price * producto.quantity}}</td>
+        <td>
+
+        <button class="btn btn-danger" (click)="deleteProductCarrito(producto.id)" >x</button>
+      </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+  <p class="justify-content-endd-flex justify-content-end"><strong>Total: {{getTotalCarrito()}}</strong> </p>
+
+</div>
