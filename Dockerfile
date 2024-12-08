@@ -8,10 +8,8 @@ WORKDIR /app
 # Copiar el archivo package.json y package-lock.json al contenedor
 COPY package*.json ./
 
-RUN npm set registry https://registry.yarnpkg.com
-
 # Instalar las dependencias del proyecto
-RUN npm install -g npm@8
+RUN npm install
 
 # Copiar el resto del código del proyecto al contenedor
 COPY . .
