@@ -20,8 +20,4 @@ export class DataProductosService {
     return this.http.get<Producto[]>(this.jsonUrl)
   }
 
-
-
-
-
 }

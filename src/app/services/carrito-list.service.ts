@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Producto } from '../interfaces/producto.interface';
-import { log } from 'console';
 
 @Injectable({
   providedIn: 'root'
@@ -32,18 +30,6 @@ export class CarritoListService {
     this.cantidadProductos ++;
 
   }
-  // addProductoToCarrito(producto: Producto) {
-  //   const index = this.listCarrito.findIndex(item => item.id === producto.id);
-  //   if (index !== -1) {
-  //     this.listCarrito[index].quantity += 1;
-  //   } else {
-  //     this.listCarrito.push({ ...producto, quantity: 1 });
-  //   }
-  //   console.log('addProductoToCarrito' + producto);
-  //   console.log('listaCarrito' + this.listCarrito);
-
-  //   this.getTotal(producto.price);
-  // }
 
   total:number = 0;
   getTotal(price:number){

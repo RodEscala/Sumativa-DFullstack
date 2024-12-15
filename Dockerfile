@@ -27,7 +27,7 @@ COPY --from=build /app/dist/sumativa/browser /usr/share/nginx/html
 # COPY nginx.conf /etc/nginx/nginx.conf
 
 # Exponer el puerto 80 para el servidor
-EXPOSE 80
+EXPOSE 8080
 
 # Comando para ejecutar nginx
 CMD ["nginx", "-g", "daemon off;"]

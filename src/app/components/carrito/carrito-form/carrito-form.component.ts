@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from "../../header/header.component";
-import { RouterModule,Router  } from '@angular/router';
+import { RouterModule  } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CarritoListService } from '../../../services/carrito-list.service';
-import { elementAt } from 'rxjs';
 import { carritoList } from '../../../interfaces/carrito-list.interface';
 
 @Component({
@@ -23,6 +22,7 @@ export class CarritoFormComponent implements OnInit{
 
 
   carritoProductList:carritoList[] = []
+
   getProductToList(){
     console.log('Lista');
 
@@ -37,8 +37,6 @@ export class CarritoFormComponent implements OnInit{
     }
   }
 
-
-
   getTotalCarrito():number{
     let total:number=0;
     for (const producto of this.carritoProductList) {
@@ -48,15 +46,12 @@ export class CarritoFormComponent implements OnInit{
     return total;
   }
 
-
   deleteProductCarrito(id:number){
     let prodDel = this.carritoProductList.findIndex( producto => producto.id ===id )
 
     if(prodDel !== -1){
       this.carritoProductList.splice(prodDel,1);
     }
-
-
   }
 
 }
